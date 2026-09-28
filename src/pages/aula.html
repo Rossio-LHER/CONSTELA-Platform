@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONSTELA | Aula Virtual</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="./aula.css" />
+  </head>
+  <body>
+    <div class="aula-shell">
+      <header class="aula-header">
+        <div class="header-left">
+          <div class="room-badge">Aula Virtual</div>
+          <h1>Sala de Enfoque</h1>
+        </div>
+
+        <div class="header-right">
+          <div class="status-pill status-live">
+            <span class="status-dot"></span>
+            <span>En vivo</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="aula-layout">
+        <section class="timer-panel card-moba glow-epic">
+          <div class="panel-header">
+            <span class="panel-tag">Modo Estudio</span>
+            <span id="status-label" class="panel-state">Listo</span>
+          </div>
+
+          <div class="timer-wrap">
+            <div id="timer-ring" class="timer-ring">
+              <div class="timer-inner">
+                <div class="timer-meta">FOCUS</div>
+                <div id="timer-value" class="timer-value">25:00</div>
+                <div class="timer-submeta">Pomodoro</div>
+              </div>
+            </div>
+          </div>
+
+          <button id="btn-focus" class="btn-moba btn-collector btn-lg btn-block">
+            INICIAR ENFOQUE
+          </button>
+        </section>
+
+        <section class="squad-panel card-moba glow-collector">
+          <div class="panel-header">
+            <span class="panel-tag">Squad</span>
+            <span class="panel-state">Conectados</span>
+          </div>
+
+          <div id="squad-grid" class="squad-grid"></div>
+        </section>
+      </main>
+
+      <section class="skills-panel card-moba glow-academico">
+        <div class="panel-header skill-header">
+          <span class="panel-tag">Habilidades</span>
+          <span id="skill-hero-name" class="panel-state">Tu Héroe</span>
+        </div>
+
+        <div id="skills-container" class="skills-container"></div>
+      </section>
+    </div>
+
+    <div id="reward-modal" class="reward-modal hidden">
+      <div class="reward-card card-moba glow-collector">
+        <div class="reward-header">
+          <h2>Bloque completado</h2>
+        </div>
+
+        <div class="reward-body">
+          <div class="reward-item">
+            <span>Experiencia</span>
+            <strong id="reward-xp">+0</strong>
+          </div>
+          <div class="reward-item">
+            <span>Monedas</span>
+            <strong id="reward-coins">+0</strong>
+          </div>
+          <div class="reward-item">
+            <span>Nivel</span>
+            <strong id="reward-level">1</strong>
+          </div>
+        </div>
+
+        <button id="btn-continue" class="btn-moba btn-epic btn-lg btn-block">
+          CONTINUAR
+        </button>
+      </div>
+    </div>
+
+    <div id="overlay-effect" class="overlay-effect"></div>
+
+    <script src="./aula.js"></script>
+  </body>
+</html>
