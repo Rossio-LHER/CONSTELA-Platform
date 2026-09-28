@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CONSTELA - Creación de Personaje</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="./registro.css" />
+  </head>
+  <body>
+    <div class="registro-container">
+      <header class="registro-header">
+        <div class="header-content">
+          <h1 class="header-title">CONSTELA</h1>
+          <p class="header-subtitle">Plataforma de Estudio Gamificada</p>
+        </div>
+      </header>
+
+      <main class="registro-main">
+        <div class="registro-grid">
+          <section class="registro-form-section">
+            <div class="card-moba">
+              <h2 class="form-title">Crea tu Héroe</h2>
+              <p class="form-subtitle">Elige tu identidad y comienza tu aventura académica</p>
+
+              <div class="form-group">
+                <label for="username" class="form-label">NOMBRE DE USUARIO</label>
+                <input
+                  type="text"
+                  id="username"
+                  class="form-input"
+                  placeholder="Ingresa tu nombre épico..."
+                  maxlength="20"
+                />
+                <small class="form-hint">Entre 3 y 20 caracteres</small>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">ELIGE TU RAZA</label>
+                <div class="razas-container">
+                  <div class="raza-card selected" data-raza="Astrales">
+                    <div class="raza-icon">✦</div>
+                    <h4 class="raza-name">Astrales</h4>
+                    <p class="raza-description">Poder de Resolución +8</p>
+                    <div class="raza-stats">
+                      <span class="stat-badge">Lógica Superior</span>
+                    </div>
+                  </div>
+
+                  <div class="raza-card" data-raza="Célidos">
+                    <div class="raza-icon">◉</div>
+                    <h4 class="raza-name">Célidos</h4>
+                    <p class="raza-description">Resistencia a Distracción +8</p>
+                    <div class="raza-stats">
+                      <span class="stat-badge">Enfoque Absoluto</span>
+                    </div>
+                  </div>
+
+                  <div class="raza-card" data-raza="Nebulanos">
+                    <div class="raza-icon">◆</div>
+                    <h4 class="raza-name">Nebulanos</h4>
+                    <p class="raza-description">Velocidad de Enfoque +8</p>
+                    <div class="raza-stats">
+                      <span class="stat-badge">Rapidez Extrema</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">SELECCIONA GÉNERO</label>
+                <div class="gender-toggle-container">
+                  <button class="btn-gender selected" data-gender="Masculino">
+                    <span class="gender-icon">♂</span>
+                    <span class="gender-label">Masculino</span>
+                  </button>
+                  <button class="btn-gender" data-gender="Femenino">
+                    <span class="gender-icon">♀</span>
+                    <span class="gender-label">Femenino</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="role-select" class="form-label">ELIGE TU ROL</label>
+                <select id="role-select" class="form-select">
+                  <option value="">-- Selecciona tu rol --</option>
+                  <option value="GuardianDelEnfoque">Guardián del Enfoque (Tanque)</option>
+                  <option value="EspecialistaAcademico">Especialista Académico (Mago)</option>
+                  <option value="SoporteMotivacional">Soporte Motivacional (Apoyo)</option>
+                </select>
+              </div>
+
+              <button id="btn-iniciar" class="btn-moba btn-epic btn-lg btn-block">
+                INICIAR AVENTURA
+              </button>
+
+              <p class="form-footer">Al continuar, aceptas los términos de CONSTELA Academy</p>
+            </div>
+          </section>
+
+          <section class="registro-preview-section">
+            <div class="preview-container">
+              <div class="preview-card card-moba glow-epic">
+                <div class="preview-header">
+                  <h3 id="preview-nombre" class="preview-nombre">Tu Héroe</h3>
+                  <span id="preview-rol" class="preview-rol badge badge-epic">Rol</span>
+                </div>
+
+                <div class="preview-image-container">
+                  <img
+                    id="preview-imagen"
+                    src="../assets/personajes/astrales_m_skin_base.png"
+                    alt="Previsualización del personaje"
+                    class="preview-imagen"
+                  />
+                  <div class="preview-shine"></div>
+                </div>
+
+                <div class="preview-stats">
+                  <div class="stat-row">
+                    <span class="stat-label">Poder de Resolución</span>
+                    <div class="stat-bar">
+                      <div id="stat-poder" class="stat-fill stat-poder"></div>
+                    </div>
+                    <span id="stat-poder-valor" class="stat-valor">0</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-label">Resistencia a Distracción</span>
+                    <div class="stat-bar">
+                      <div id="stat-resistencia" class="stat-fill stat-resistencia"></div>
+                    </div>
+                    <span id="stat-resistencia-valor" class="stat-valor">0</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-label">Velocidad de Enfoque</span>
+                    <div class="stat-bar">
+                      <div id="stat-velocidad" class="stat-fill stat-velocidad"></div>
+                    </div>
+                    <span id="stat-velocidad-valor" class="stat-valor">0</span>
+                  </div>
+                </div>
+
+                <div class="preview-info">
+                  <div class="info-item">
+                    <span class="info-label">Raza</span>
+                    <span id="preview-raza" class="info-value">Astrales</span>
+                  </div>
+                  <div class="info-item">
+                    <span class="info-label">Género</span>
+                    <span id="preview-genero" class="info-value">Masculino</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="registro-footer">
+        <p>&copy; 2026 CONSTELA Academy. Todos los derechos reservados.</p>
+      </footer>
+    </div>
+
+    <script src="./registro.js"></script>
+  </body>
+</html>
