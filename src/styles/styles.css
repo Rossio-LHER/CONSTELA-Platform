@@ -1,0 +1,889 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   CONSTELA - ESTILOS GLOBALES (CSS)
+   Temática: Lobby Premium MLBB + Cósmica de Estudio
+   Diseño: Glassmorphism, Neón Sutil, Animaciones Brillantes
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   1. IMPORTACIÓN DE FUENTES DE GOOGLE
+   ───────────────────────────────────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Condensed:wght@300;400;700&display=swap");
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   2. RESET GLOBAL Y VARIABLES CSS
+   ───────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* COLORES DE RAREZA */
+  --color-basico: #c0c0c0;
+  --color-basico-dark: #808080;
+  --color-basico-light: #e8e8e8;
+
+  --color-epico: #9d4edd;
+  --color-epico-dark: #5a189a;
+  --color-epico-bright: #c77dff;
+  --color-epico-neon: #b537f2;
+
+  --color-collector: #ffd60a;
+  --color-collector-dark: #f4a460;
+  --color-collector-light: #ffe135;
+  --color-collector-glow: #ffed4e;
+
+  /* COLORES DE ROLES Y ESTADÍSTICAS */
+  --color-guardian: #4ecdc4;
+  --color-guardian-dark: #2a8a7f;
+  --color-guardian-light: #7fffff;
+
+  --color-academico: #6c5ce7;
+  --color-academico-dark: #3d2c5f;
+  --color-academico-light: #a29bfe;
+
+  --color-soporte: #ffeaa7;
+  --color-soporte-dark: #fdcb6e;
+  --color-soporte-light: #ffff99;
+
+  /* FONDOS PRIMARIOS */
+  --bg-primary: #0a0e27;
+  --bg-secondary: #16192b;
+  --bg-tertiary: #1f2344;
+  --bg-card: rgba(15, 18, 32, 0.7);
+  --bg-card-hover: rgba(25, 28, 50, 0.85);
+
+  /* BORDES Y LÍNEAS */
+  --border-neon-subtle: 1px solid rgba(157, 78, 221, 0.3);
+  --border-neon-medium: 2px solid rgba(157, 78, 221, 0.6);
+  --border-gold: 1px solid rgba(255, 214, 10, 0.4);
+
+  /* TIPOGRAFÍA */
+  --font-heading: "Orbitron", sans-serif;
+  --font-body: "Roboto Condensed", sans-serif;
+
+  /* ESPACIADO Y TAMAÑOS */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* TRANSICIONES */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+
+  /* BORDES */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   3. RESET GLOBAL
+   ───────────────────────────────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e0e0e0;
+  background: radial-gradient(circle, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Pseudo-elemento para efecto de estrellas parpadeantes */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8) 1px,
+      transparent 1px
+    ),
+    radial-gradient(circle, rgba(200, 200, 255, 0.5) 2px, transparent 2px);
+  background-size: 80px 80px, 120px 120px;
+  background-position: 0 0, 40px 40px;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.15;
+  animation: twinkling 8s linear infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   4. TIPOGRAFÍA
+   ───────────────────────────────────────────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
+}
+
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  margin-bottom: var(--spacing-xl);
+  text-shadow: 0 0 40px rgba(157, 78, 221, 0.6), 0 0 20px rgba(193, 125, 255, 0.3);
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: var(--spacing-lg);
+  text-shadow: 0 0 30px rgba(157, 78, 221, 0.5);
+}
+
+h3 {
+  font-size: 1.75rem;
+  letter-spacing: 1.5px;
+  margin-bottom: var(--spacing-md);
+}
+
+h4 {
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+small {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   5. ANIMACIONES FUNDAMENTALES
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* Efecto de estrellas parpadeantes */
+@keyframes twinkling {
+  0% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.15;
+  }
+}
+
+/* Glow básico para elementos epic */
+@keyframes glow-epic {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(157, 78, 221, 0.3), 0 0 20px rgba(193, 125, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.6), 0 0 40px rgba(193, 125, 255, 0.3);
+  }
+}
+
+/* Glow para elementos collector */
+@keyframes glow-collector {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(255, 214, 10, 0.3), 0 0 30px rgba(255, 237, 74, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 214, 10, 0.6), 0 0 50px rgba(255, 237, 74, 0.4);
+  }
+}
+
+/* Pulso de brillo para componentes activos */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Brillo de entrada */
+@keyframes shine-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+    box-shadow: 0 0 0 rgba(157, 78, 221, 0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 30px rgba(157, 78, 221, 0.3);
+  }
+}
+
+/* Movimiento de neón */
+@keyframes neon-flicker {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.5), 0 0 20px rgba(157, 78, 221, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(157, 78, 221, 0.8), 0 0 40px rgba(193, 125, 255, 0.5);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   6. COMPONENTE TARJETA (.card-moba)
+   Glassmorphism con bordes de neón sutil
+   ───────────────────────────────────────────────────────────────────────���───── */
+.card-moba {
+  position: relative;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--border-neon-subtle);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-md);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  animation: shine-enter var(--transition-slow);
+}
+
+.card-moba::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(157, 78, 221, 0.3),
+    transparent
+  );
+  z-index: 1;
+}
+
+.card-moba::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(157, 78, 221, 0.2),
+    transparent
+  );
+  z-index: 1;
+}
+
+.card-moba:hover {
+  background: var(--bg-card-hover);
+  border: var(--border-neon-medium);
+  box-shadow: 0 0 20px rgba(157, 78, 221, 0.3), inset 0 0 20px rgba(157, 78, 221, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Variante de tarjeta epic */
+.card-moba.card-epic {
+  border: 1px solid rgba(157, 78, 221, 0.5);
+}
+
+.card-moba.card-epic:hover {
+  border: 2px solid rgba(193, 125, 255, 0.8);
+  box-shadow: 0 0 30px rgba(157, 78, 221, 0.5), inset 0 0 30px rgba(157, 78, 221, 0.1);
+}
+
+/* Variante de tarjeta collector */
+.card-moba.card-collector {
+  border: 1px solid rgba(255, 214, 10, 0.4);
+}
+
+.card-moba.card-collector:hover {
+  border: 2px solid rgba(255, 237, 74, 0.8);
+  box-shadow: 0 0 30px rgba(255, 214, 10, 0.4), inset 0 0 30px rgba(255, 214, 10, 0.08);
+}
+
+/* Variante de tarjeta basic */
+.card-moba.card-basic {
+  border: 1px solid rgba(192, 192, 192, 0.3);
+  background: rgba(15, 18, 32, 0.6);
+}
+
+.card-moba.card-basic:hover {
+  border: 1px solid rgba(192, 192, 192, 0.5);
+  box-shadow: 0 0 15px rgba(192, 192, 192, 0.2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   7. EFECTOS DE BRILLO (.glow-epic, .glow-collector, .glow-basic)
+   Clases para aplicar resplandor dinámico
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.glow-basic {
+  position: relative;
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.2);
+  animation: none;
+}
+
+.glow-epic {
+  position: relative;
+  animation: glow-epic 3s ease-in-out infinite;
+}
+
+.glow-collector {
+  position: relative;
+  animation: glow-collector 3s ease-in-out infinite;
+}
+
+/* Glow intenso para elementos destacados */
+.glow-epic.glow-intense {
+  animation: glow-epic 1.5s ease-in-out infinite;
+}
+
+.glow-collector.glow-intense {
+  animation: glow-collector 1.5s ease-in-out infinite;
+}
+
+/* Glow por rol de héroe */
+.glow-guardian {
+  box-shadow: 0 0 15px rgba(78, 205, 196, 0.3);
+}
+
+.glow-guardian:hover {
+  box-shadow: 0 0 30px rgba(78, 205, 196, 0.5);
+}
+
+.glow-academico {
+  box-shadow: 0 0 15px rgba(108, 92, 231, 0.3);
+}
+
+.glow-academico:hover {
+  box-shadow: 0 0 30px rgba(108, 92, 231, 0.5);
+}
+
+.glow-soporte {
+  box-shadow: 0 0 15px rgba(255, 234, 167, 0.3);
+}
+
+.glow-soporte:hover {
+  box-shadow: 0 0 30px rgba(255, 234, 167, 0.5);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   8. BOTONES DE COMBATE (.btn-moba)
+   Biseles metálicos, tipografía angular, animaciones brillantes
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.btn-moba {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: var(--spacing-md) var(--spacing-xl);
+  margin: var(--spacing-sm);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.3), 0 3px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-moba::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left var(--transition-normal);
+  z-index: -1;
+}
+
+.btn-moba:hover::before {
+  left: 100%;
+}
+
+/* Variante EPIC (Morado) */
+.btn-moba.btn-epic {
+  background: linear-gradient(135deg, var(--color-epico-bright) 0%, var(--color-epico) 100%);
+  color: #ffffff;
+  box-shadow: inset 0 -3px 0 rgba(90, 24, 154, 0.8), 0 3px 12px rgba(157, 78, 221, 0.4),
+    0 0 20px rgba(157, 78, 221, 0.2);
+}
+
+.btn-moba.btn-epic:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 -3px 0 rgba(90, 24, 154, 0.8), 0 5px 20px rgba(157, 78, 221, 0.6),
+    0 0 30px rgba(193, 125, 255, 0.4);
+  filter: brightness(1.15);
+}
+
+.btn-moba.btn-epic:active {
+  transform: translateY(0);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), 0 2px 5px rgba(157, 78, 221, 0.3);
+}
+
+/* Variante COLLECTOR (Oro) */
+.btn-moba.btn-collector {
+  background: linear-gradient(135deg, var(--color-collector-light) 0%, var(--color-collector) 100%);
+  color: #1a1a1a;
+  box-shadow: inset 0 -3px 0 rgba(244, 164, 96, 0.8), 0 3px 12px rgba(255, 214, 10, 0.4),
+    0 0 20px rgba(255, 214, 10, 0.2);
+  font-weight: 900;
+}
+
+.btn-moba.btn-collector:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 -3px 0 rgba(244, 164, 96, 0.8), 0 5px 20px rgba(255, 214, 10, 0.6),
+    0 0 30px rgba(255, 237, 74, 0.5);
+  filter: brightness(1.2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.btn-moba.btn-collector:active {
+  transform: translateY(0);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3), 0 2px 5px rgba(255, 214, 10, 0.3);
+}
+
+/* Variante BASIC (Plata) */
+.btn-moba.btn-basic {
+  background: linear-gradient(135deg, var(--color-basico-light) 0%, var(--color-basico) 100%);
+  color: #1a1a1a;
+  box-shadow: inset 0 -3px 0 rgba(128, 128, 128, 0.8), 0 3px 8px rgba(192, 192, 192, 0.3);
+}
+
+.btn-moba.btn-basic:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 -3px 0 rgba(128, 128, 128, 0.8), 0 5px 15px rgba(192, 192, 192, 0.4);
+  filter: brightness(1.1);
+}
+
+.btn-moba.btn-basic:active {
+  transform: translateY(0);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(192, 192, 192, 0.2);
+}
+
+/* Botones por rol de héroe */
+.btn-moba.btn-guardian {
+  background: linear-gradient(135deg, var(--color-guardian-light) 0%, var(--color-guardian) 100%);
+  color: #ffffff;
+  box-shadow: inset 0 -3px 0 rgba(42, 138, 127, 0.8), 0 3px 12px rgba(78, 205, 196, 0.4),
+    0 0 20px rgba(78, 205, 196, 0.2);
+}
+
+.btn-moba.btn-guardian:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 -3px 0 rgba(42, 138, 127, 0.8), 0 5px 20px rgba(78, 205, 196, 0.6),
+    0 0 30px rgba(126, 255, 255, 0.4);
+}
+
+.btn-moba.btn-academico {
+  background: linear-gradient(135deg, var(--color-academico-light) 0%, var(--color-academico) 100%);
+  color: #ffffff;
+  box-shadow: inset 0 -3px 0 rgba(61, 44, 95, 0.8), 0 3px 12px rgba(108, 92, 231, 0.4),
+    0 0 20px rgba(108, 92, 231, 0.2);
+}
+
+.btn-moba.btn-academico:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 -3px 0 rgba(61, 44, 95, 0.8), 0 5px 20px rgba(108, 92, 231, 0.6),
+    0 0 30px rgba(162, 155, 254, 0.4);
+}
+
+.btn-moba.btn-soporte {
+  background: linear-gradient(135deg, var(--color-soporte-light) 0%, var(--color-soporte) 100%);
+  color: #1a1a1a;
+  box-shadow: inset 0 -3px 0 rgba(253, 203, 110, 0.8), 0 3px 12px rgba(255, 234, 167, 0.4),
+    0 0 20px rgba(255, 234, 167, 0.2);
+}
+
+.btn-moba.btn-soporte:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 -3px 0 rgba(253, 203, 110, 0.8), 0 5px 20px rgba(255, 234, 167, 0.6),
+    0 0 30px rgba(255, 255, 153, 0.4);
+}
+
+/* Estado deshabilitado */
+.btn-moba:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-moba:disabled:hover {
+  transform: none;
+  filter: none;
+}
+
+/* Botón pequeño */
+.btn-moba.btn-sm {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+/* Botón grande */
+.btn-moba.btn-lg {
+  padding: var(--spacing-lg) var(--spacing-2xl);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Botón bloque (ancho completo) */
+.btn-moba.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   9. CONTENEDOR PRINCIPAL
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+}
+
+.container-md {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+.container-sm {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   10. GRILLAS Y LAYOUTS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+.gap-lg {
+  gap: var(--spacing-lg);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   11. BADGES Y ETIQUETAS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(157, 78, 221, 0.2);
+  color: var(--color-epico-bright);
+  border: 1px solid var(--color-epico-neon);
+}
+
+.badge.badge-basic {
+  background: rgba(192, 192, 192, 0.15);
+  color: var(--color-basico-light);
+  border: 1px solid var(--color-basico);
+}
+
+.badge.badge-epic {
+  background: rgba(157, 78, 221, 0.2);
+  color: var(--color-epico-bright);
+  border: 1px solid var(--color-epico-neon);
+}
+
+.badge.badge-collector {
+  background: rgba(255, 214, 10, 0.2);
+  color: var(--color-collector-light);
+  border: 1px solid var(--color-collector);
+  font-weight: 900;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   12. EFECTOS DE TEXTO
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.text-neon {
+  color: var(--color-epico-bright);
+  text-shadow: 0 0 10px rgba(157, 78, 221, 0.6);
+  animation: neon-flicker 3s ease-in-out infinite;
+}
+
+.text-gold {
+  color: var(--color-collector-light);
+  text-shadow: 0 0 10px rgba(255, 214, 10, 0.4);
+}
+
+.text-guardian {
+  color: var(--color-guardian-light);
+  text-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+}
+
+.text-academico {
+  color: var(--color-academico-light);
+  text-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
+}
+
+.text-soporte {
+  color: var(--color-soporte-light);
+  text-shadow: 0 0 10px rgba(255, 234, 167, 0.3);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   13. SOMBRAS Y EFECTOS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.shadow-md {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.shadow-xl {
+  box-shadow: 0 12px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   14. RESPONSIVE
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: var(--spacing-lg);
+  }
+
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-moba {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 13px;
+  }
+
+  .container,
+  .container-md {
+    padding: var(--spacing-md);
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+  }
+
+  .btn-moba {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  .card-moba {
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   15. UTILIDADES DIVERSAS
+   ───────────────────────────────────────────────────────────────────────────── */
+
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.blur-lg {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.rounded-sm {
+  border-radius: var(--border-radius-sm);
+}
+
+.rounded-md {
+  border-radius: var(--border-radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--border-radius-lg);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.transition-all {
+  transition: all var(--transition-normal);
+}
+
+.transition-fast {
+  transition: all var(--transition-fast);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   FIN DEL ARCHIVO DE ESTILOS
+   ═══════════════════════════════════════════════════════════════════════════════ */
