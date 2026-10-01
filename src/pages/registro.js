@@ -1,3 +1,5 @@
+const FALLBACK_CHARACTER_IMAGE = "../assets/personajes/default.svg";
+
 const state = {
   raza: "Astrales",
   genero: "Masculino",
@@ -36,6 +38,15 @@ const ROL_LABELS = {
   SoporteMotivacional: "Soporte Motivacional",
 };
 
+function setCharacterImage(element, src) {
+  if (!element) return;
+  element.onerror = () => {
+    element.src = FALLBACK_CHARACTER_IMAGE;
+    element.onerror = null;
+  };
+  element.src = src;
+}
+
 function calcularRutaImagen() {
   const generoKey = state.genero === "Masculino" ? "m" : "f";
   const razaKey = state.raza.toLowerCase();
@@ -49,7 +60,7 @@ function actualizarPreview() {
   previewNombre.textContent = usernameInput.value.trim() || "Tu Héroe";
 
   const ruta = calcularRutaImagen();
-  previewImagen.src = ruta;
+  setCharacterImage(previewImagen, ruta);
 
   const stats = RAZA_STATS[state.raza] || { poder: 0, resistencia: 0, velocidad: 0 };
   statPoder.style.width = `${stats.poder}%`;
@@ -175,3 +186,4 @@ setSelectedRaza("Astrales");
 setSelectedGenero("Masculino");
 setSelectedRol("GuardianDelEnfoque");
 actualizarPreview();
+

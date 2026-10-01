@@ -45,7 +45,7 @@ class PersistenciaConstela {
         genero: "Femenino",
         nivel: 1,
         experiencia: 0,
-        visualPath: "../assets/personajes/astrales_f_skin_base.png",
+        visualPath: "../assets/personajes/default.svg",
         vfxColor: "#7a5cff",
         animacion: "anim-estudio",
         stats: {
@@ -243,9 +243,10 @@ function renderSquad() {
         <article class="squad-card ${student.animacionEstudio || "anim-estudio"}">
           <div class="avatar-wrap">
             <img
-              src="${student.rutaImagen || "../assets/personajes/default.png"}"
+              src="${student.rutaImagen || "../assets/personajes/default.svg"}"
               alt="${student.nombre}"
               class="avatar-image ${student.id === state.hero.id ? "is-player" : ""}"
+              onerror="this.onerror=null;this.src='../assets/personajes/default.svg';"
             />
           </div>
           <div class="avatar-meta">
@@ -254,7 +255,7 @@ function renderSquad() {
               <span>Lv ${student.nivel}</span>
             </div>
             <div class="xp-bar">
-              <div class="xp-fill" style="width: ${(student.experiencia / student.experienciaNecesaria()) * 100}%"></div>
+              <div class="xp-fill" style="width: ${(student.experiencia / Math.max(student.experienciaNecesaria(), 1)) * 100}%"></div>
             </div>
           </div>
         </article>
@@ -346,7 +347,7 @@ function renderPlayerSummary() {
       rol: "GuardianDelEnfoque",
       raza: "Célidos",
       genero: "Masculino",
-      visualPath: "../assets/personajes/celidos_m_skin_base.png",
+      visualPath: "../assets/personajes/default.svg",
       animacion: "anim-estudio",
       nivel: 3,
       experiencia: 80,
@@ -363,7 +364,7 @@ function renderPlayerSummary() {
       rol: "SoporteMotivacional",
       raza: "Nebulanos",
       genero: "Femenino",
-      visualPath: "../assets/personajes/nebulanos_f_skin_base.png",
+      visualPath: "../assets/personajes/default.svg",
       animacion: "anim-estudio",
       nivel: 5,
       experiencia: 120,
@@ -380,7 +381,7 @@ function renderPlayerSummary() {
       rol: "EspecialistaAcademico",
       raza: "Astrales",
       genero: "Masculino",
-      visualPath: "../assets/personajes/astrales_m_skin_base.png",
+      visualPath: "../assets/personajes/default.svg",
       animacion: "anim-estudio",
       nivel: 2,
       experiencia: 60,
@@ -464,3 +465,4 @@ window.aplicarHabilidadEnSala = function (habilidadId) {
     finalizaGuardadoHeroe();
   }
 };
+
