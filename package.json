@@ -1,12 +1,19 @@
 {
   "name": "constela-platform",
-  "version": "1.0.0",
   "private": true,
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "echo 'Static site - no build needed'",
-    "start": "npx http-server src -p 8080 -c-1",
-    "dev": "npx http-server src -p 8080 -c-1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "devDependencies": {}
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.10"
+  }
 }
