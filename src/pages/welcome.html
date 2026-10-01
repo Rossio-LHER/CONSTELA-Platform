@@ -3,9 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CONSTELA - Bienvenida</title>
+    <meta name="description" content="CONSTELA - Plataforma de estudio gamificada basada en Pomodoro con sistema de personajes, aulas virtuales y recompensas" />
+    <meta name="theme-color" content="#9d4edd" />
+    <title>CONSTELA - Academia de Estudio Gamificada</title>
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="./welcome.css" />
+    <style>
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .btn-loading {
+        opacity: 0.7 !important;
+        pointer-events: none !important;
+      }
+    </style>
   </head>
   <body>
     <div class="welcome-shell">
@@ -14,7 +32,7 @@
       <header class="welcome-header">
         <div class="logo-section">
           <h1 class="logo-title">CONSTELA</h1>
-          <p class="logo-subtitle">Academia de Estudio Gamificada</p>
+          <p class="logo-subtitle">Academia de Estudio Gamificada • Edición Premium</p>
         </div>
       </header>
 
@@ -22,60 +40,60 @@
         <section class="hero-section">
           <div class="hero-text">
             <h2>Bienvenido a tu Aventura Académica</h2>
-            <p>Transforma tu estudio en una épica aventura. Crea un héroe, entra a aulas virtuales y domina el arte del enfoque con poderes académicos reales.</p>
+            <p>Transforma tu estudio en una épica aventura. Crea un héroe personalizado, entra a aulas virtuales inmersivas y domina el arte del enfoque con poderes académicos reales. Tu progreso es persistente y siempre estará disponible.</p>
           </div>
         </section>
 
         <section class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">⚡</div>
+            <div class="feature-icon">⏱️</div>
             <h3>Pomodoro Premium</h3>
-            <p>Sesiones de 25 minutos con mecánicas gamificadas y recompensas reales.</p>
+            <p>Sesiones de 25 minutos con mecánicas gamificadas, recompensas dinámicas y control total de tu enfoque.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">🎭</div>
             <h3>Crea tu Héroe</h3>
-            <p>Elige tu raza, género y rol. Tu personaje crece con cada sesión de estudio.</p>
+            <p>Elige tu raza, género y rol. Tu personaje crece con cada sesión de estudio y desbloquea nuevas habilidades.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">👥</div>
             <h3>Squad Conectado</h3>
-            <p>Estudia con otros jugadores en tiempo real. Comparte tu progreso y motívate mutuamente.</p>
+            <p>Estudia en compañía. Visualiza a otros estudiantes en tu aula y motívate mutuamente en tiempo real.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">✨</div>
-            <h3>Habilidades Reales</h3>
-            <p>Desbloquea poderes académicos que mejoran tu comprensión y retención.</p>
+            <h3>Habilidades Académicas</h3>
+            <p>Desbloquea poderes que mejoran tu comprensión, retención y velocidad de aprendizaje con cada nivel.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">🏆</div>
             <h3>Sistema de Recompensas</h3>
-            <p>Gana experiencia, monedas y niveles. Acceso a skins exclusivas y contenido premium.</p>
+            <p>Gana experiencia, monedas y niveles. Acceso a skins exclusivas y contenido desbloqueado por progreso.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">🌌</div>
-            <h3>Progreso Persistente</h3>
-            <p>Tu progreso se guarda automáticamente. Accede desde cualquier dispositivo.</p>
+            <div class="feature-icon">💾</div>
+            <h3>Progreso Sincronizado</h3>
+            <p>Tu progreso se guarda automáticamente en el dispositivo. Accede desde cualquier navegador cuando quieras.</p>
           </div>
         </section>
 
         <section class="cta-section">
           <button id="btn-registrar" class="btn-moba btn-epic btn-xl">
-            CREAR MI HÉROE
+            ⚡ CREAR MI HÉROE
           </button>
           <button id="btn-continuar" class="btn-moba btn-collector btn-xl hidden">
-            CONTINUAR MI AVENTURA
+            🚀 CONTINUAR MI AVENTURA
           </button>
         </section>
       </main>
 
       <footer class="welcome-footer">
-        <p>&copy; 2026 CONSTELA Academy. Plataforma educativa gamificada.</p>
+        <p>&copy; 2026 CONSTELA Academy. Plataforma educativa gamificada • Versión 1.0</p>
       </footer>
     </div>
 

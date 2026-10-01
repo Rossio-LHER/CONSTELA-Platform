@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CONSTELA | Aula Virtual</title>
+    <meta name="description" content="Aula Virtual de CONSTELA - Sesiones de Pomodoro gamificadas" />
+    <title>CONSTELA | Aula Virtual de Enfoque</title>
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="./aula.css" />
   </head>
@@ -12,28 +13,29 @@
       <header class="aula-header">
         <div class="header-left">
           <div class="room-badge">Aula Virtual</div>
-          <h1>Sala de Enfoque</h1>
+          <h1>Sala de Enfoque Supremo</h1>
         </div>
 
         <div class="header-right">
           <div class="status-pill status-live">
             <span class="status-dot"></span>
-            <span>En vivo</span>
+            <span>En Vivo</span>
           </div>
+          <a href="./welcome.html" class="header-link">← Inicio</a>
         </div>
       </header>
 
       <main class="aula-layout">
         <section class="timer-panel card-moba glow-epic">
           <div class="panel-header">
-            <span class="panel-tag">Modo Estudio</span>
-            <span id="status-label" class="panel-state">Listo</span>
+            <span class="panel-tag">Modo Estudio Intenso</span>
+            <span id="status-label" class="panel-state">Listo para Enfoque</span>
           </div>
 
           <div class="timer-wrap">
             <div id="timer-ring" class="timer-ring">
               <div class="timer-inner">
-                <div class="timer-meta">FOCUS</div>
+                <div class="timer-meta">⏱️ FOCUS</div>
                 <div id="timer-value" class="timer-value">25:00</div>
                 <div class="timer-submeta">Pomodoro</div>
               </div>
@@ -41,14 +43,14 @@
           </div>
 
           <button id="btn-focus" class="btn-moba btn-collector btn-lg btn-block">
-            INICIAR ENFOQUE
+            ▶ INICIAR ENFOQUE
           </button>
         </section>
 
         <section class="squad-panel card-moba glow-collector">
           <div class="panel-header">
-            <span class="panel-tag">Squad</span>
-            <span class="panel-state">Conectados</span>
+            <span class="panel-tag">👥 Squad</span>
+            <span class="panel-state">Estudiando</span>
           </div>
 
           <div id="squad-grid" class="squad-grid"></div>
@@ -57,7 +59,7 @@
 
       <section class="skills-panel card-moba glow-academico">
         <div class="panel-header skill-header">
-          <span class="panel-tag">Habilidades</span>
+          <span class="panel-tag">✨ Habilidades</span>
           <span id="skill-hero-name" class="panel-state">Tu Héroe</span>
         </div>
 
@@ -68,26 +70,27 @@
     <div id="reward-modal" class="reward-modal hidden">
       <div class="reward-card card-moba glow-collector">
         <div class="reward-header">
-          <h2>Bloque completado</h2>
+          <h2>🎉 ¡Bloque Completado!</h2>
+          <p>Excelente trabajo. Tu progreso ha sido guardado.</p>
         </div>
 
         <div class="reward-body">
           <div class="reward-item">
-            <span>Experiencia</span>
+            <span>⭐ Experiencia Ganada</span>
             <strong id="reward-xp">+0</strong>
           </div>
           <div class="reward-item">
-            <span>Monedas</span>
+            <span>💰 Monedas Obtenidas</span>
             <strong id="reward-coins">+0</strong>
           </div>
           <div class="reward-item">
-            <span>Nivel</span>
+            <span>📈 Nivel Actual</span>
             <strong id="reward-level">1</strong>
           </div>
         </div>
 
         <button id="btn-continue" class="btn-moba btn-epic btn-lg btn-block">
-          CONTINUAR
+          ▶ SIGUIENTE SESIÓN
         </button>
       </div>
     </div>

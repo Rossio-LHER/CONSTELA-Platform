@@ -10,12 +10,30 @@ body {
 
 .registro-container {
   width: min(1200px, 92vw);
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 .registro-header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.back-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  color: #e0d5ff;
+  transform: translateX(-4px);
 }
 
 .header-title {
@@ -25,20 +43,23 @@ body {
   text-transform: uppercase;
   margin: 0;
   color: white;
-  text-shadow: 0 0 20px rgba(157, 78, 221, 0.7);
+  text-shadow: 0 0 30px rgba(157, 78, 221, 0.8);
+  font-weight: 900;
 }
 
 .header-subtitle {
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.75);
+  font-weight: 300;
+  margin-top: 8px;
 }
 
 .registro-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 28px;
+  gap: 32px;
   align-items: stretch;
 }
 
@@ -47,44 +68,51 @@ body {
   font-size: clamp(1.6rem, 2vw, 2.2rem);
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .form-subtitle {
-  color: rgba(255,255,255,0.72);
-  margin-bottom: 18px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  font-weight: 300;
 }
 
 .form-group {
-  margin-bottom: 22px;
+  margin-bottom: 26px;
 }
 
 .form-label {
   display: block;
   margin-bottom: 10px;
   font-family: "Orbitron", sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 1.4px;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #d7d7ff;
+  font-weight: 600;
 }
 
 .form-input,
 .form-select {
   width: 100%;
-  background: rgba(10, 12, 20, 0.9);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(10, 12, 20, 0.95);
+  border: 1.5px solid rgba(255,255,255,0.12);
   border-radius: 12px;
   padding: 14px 16px;
   color: white;
+  font-family: "Orbitron", sans-serif;
   outline: none;
   transition: all 0.25s ease;
+  font-size: 0.95rem;
 }
 
 .form-input:focus,
 .form-select:focus {
-  border-color: rgba(157, 78, 221, 0.8);
-  box-shadow: 0 0 18px rgba(157, 78, 221, 0.25);
+  border-color: rgba(157, 78, 221, 0.9);
+  box-shadow: 0 0 24px rgba(157, 78, 221, 0.35);
+  background: rgba(15, 12, 25, 0.98);
 }
 
 .form-hint {
@@ -92,6 +120,7 @@ body {
   margin-top: 6px;
   font-size: 0.75rem;
   color: rgba(255,255,255,0.6);
+  font-weight: 300;
 }
 
 .razas-container {
@@ -100,30 +129,31 @@ body {
 }
 
 .raza-card {
-  background: rgba(18, 22, 38, 0.8);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(18, 22, 38, 0.85);
+  border: 1.5px solid rgba(255,255,255,0.1);
   border-radius: 14px;
-  padding: 16px 18px;
+  padding: 18px 20px;
   cursor: pointer;
   transition: all 0.25s ease;
 }
 
 .raza-card:hover {
-  border-color: rgba(157, 78, 221, 0.9);
+  border-color: rgba(157, 78, 221, 0.95);
   transform: translateY(-2px);
-  box-shadow: 0 0 24px rgba(157, 78, 221, 0.15);
+  box-shadow: 0 0 28px rgba(157, 78, 221, 0.2);
 }
 
 .raza-card.selected {
   border-color: rgba(157, 78, 221, 1);
-  box-shadow: 0 0 26px rgba(157, 78, 221, 0.3), inset 0 0 12px rgba(157, 78, 221, 0.18);
-  background: rgba(30, 18, 44, 0.9);
+  box-shadow: 0 0 32px rgba(157, 78, 221, 0.4), inset 0 0 15px rgba(157, 78, 221, 0.2);
+  background: rgba(35, 22, 50, 0.95);
 }
 
 .raza-icon {
   font-size: 1.6rem;
   color: #d9d2ff;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  display: block;
 }
 
 .raza-name {
@@ -131,11 +161,15 @@ body {
   font-family: "Orbitron", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  font-weight: 700;
+  font-size: 0.95rem;
 }
 
 .raza-description {
   margin: 0;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.78);
+  font-size: 0.85rem;
+  font-weight: 400;
 }
 
 .raza-stats {
@@ -144,14 +178,15 @@ body {
 
 .stat-badge {
   display: inline-block;
-  background: rgba(157, 78, 221, 0.15);
-  border: 1px solid rgba(157, 78, 221, 0.45);
+  background: rgba(157, 78, 221, 0.18);
+  border: 1px solid rgba(157, 78, 221, 0.5);
   color: #d9c3ff;
   border-radius: 999px;
-  padding: 5px 10px;
-  font-size: 0.72rem;
-  letter-spacing: 0.7px;
+  padding: 6px 12px;
+  font-size: 0.7rem;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .gender-toggle-container {
@@ -161,8 +196,8 @@ body {
 }
 
 .btn-gender {
-  background: rgba(18, 22, 38, 0.75);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(18, 22, 38, 0.8);
+  border: 1.5px solid rgba(255,255,255,0.1);
   color: white;
   padding: 14px 12px;
   border-radius: 12px;
@@ -174,12 +209,18 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.btn-gender:hover {
+  border-color: rgba(157, 78, 221, 0.6);
 }
 
 .btn-gender.selected {
-  border-color: rgba(157, 78, 221, 0.9);
-  box-shadow: 0 0 18px rgba(157, 78, 221, 0.3);
-  background: rgba(33, 20, 46, 0.9);
+  border-color: rgba(157, 78, 221, 1);
+  box-shadow: 0 0 22px rgba(157, 78, 221, 0.35);
+  background: rgba(35, 22, 50, 0.95);
 }
 
 .preview-card {
@@ -187,7 +228,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 22px;
+  padding: 26px;
 }
 
 .preview-header {
@@ -195,13 +236,14 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .preview-nombre {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .preview-rol {
@@ -214,19 +256,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 320px;
-  margin-bottom: 18px;
+  min-height: 340px;
+  margin-bottom: 20px;
   border-radius: 18px;
-  background: radial-gradient(circle, rgba(136, 96, 255, 0.2), rgba(15,18,32,0.5));
-  border: 1px solid rgba(255,255,255,0.08);
+  background: radial-gradient(circle, rgba(136, 96, 255, 0.25), rgba(15,18,32,0.6));
+  border: 1.5px solid rgba(255,255,255,0.1);
   overflow: hidden;
 }
 
 .preview-imagen {
-  max-width: 80%;
-  max-height: 320px;
+  max-width: 85%;
+  max-height: 340px;
   object-fit: contain;
-  filter: drop-shadow(0 0 25px rgba(157, 78, 221, 0.5));
+  filter: drop-shadow(0 0 28px rgba(157, 78, 221, 0.55));
   z-index: 1;
 }
 
@@ -243,7 +285,7 @@ body {
 }
 
 .preview-stats {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .stat-row {
@@ -251,18 +293,19 @@ body {
   grid-template-columns: 1.6fr 1.3fr 38px;
   gap: 10px;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .stat-label {
-  color: rgba(255,255,255,0.78);
+  color: rgba(255,255,255,0.8);
   font-size: 0.8rem;
   letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
 .stat-bar {
   height: 8px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.12);
   border-radius: 999px;
   overflow: hidden;
 }
@@ -290,6 +333,7 @@ body {
   text-align: right;
   font-weight: 700;
   color: white;
+  font-size: 0.9rem;
 }
 
 .preview-info {
@@ -301,40 +345,43 @@ body {
 
 .info-item {
   background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 12px;
   padding: 10px 12px;
 }
 
 .info-label {
   display: block;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.58);
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 5px;
+  font-weight: 600;
 }
 
 .info-value {
   font-family: "Orbitron", sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .form-footer {
   text-align: center;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.58);
   font-size: 0.75rem;
-  margin-top: 18px;
+  margin-top: 20px;
+  font-weight: 300;
 }
 
 .registro-footer {
   text-align: center;
-  margin-top: 18px;
+  margin-top: 30px;
   color: rgba(255,255,255,0.6);
   font-size: 0.8rem;
   letter-spacing: 1px;
+  font-weight: 300;
 }
 
 @media (max-width: 900px) {
@@ -354,6 +401,12 @@ body {
   }
 
   .preview-image-container {
-    min-height: 260px;
+    min-height: 280px;
+  }
+
+  .back-link {
+    position: static;
+    margin-bottom: 15px;
+    display: block;
   }
 }

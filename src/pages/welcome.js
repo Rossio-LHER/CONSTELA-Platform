@@ -8,6 +8,8 @@ function verificarProgreso() {
       const data = JSON.parse(progress);
       if (data.heroe && data.cuenta) {
         btnContinuar.classList.remove("hidden");
+        // Animar entrada del botón continuar
+        btnContinuar.style.animation = "slideInLeft 0.6s ease";
         return true;
       }
     } catch (error) {
@@ -17,12 +19,25 @@ function verificarProgreso() {
   return false;
 }
 
-btnRegistrar.addEventListener("click", () => {
-  window.location.href = "./registro.html";
-});
+function handleRegistrar() {
+  btnRegistrar.classList.add("btn-loading");
+  setTimeout(() => {
+    window.location.href = "./registro.html";
+  }, 200);
+}
 
-btnContinuar.addEventListener("click", () => {
-  window.location.href = "./aula.html";
-});
+function handleContinuar() {
+  btnContinuar.classList.add("btn-loading");
+  setTimeout(() => {
+    window.location.href = "./aula.html";
+  }, 200);
+}
 
-window.addEventListener("DOMContentLoaded", verificarProgreso);
+btnRegistrar.addEventListener("click", handleRegistrar);
+btnContinuar.addEventListener("click", handleContinuar);
+
+window.addEventListener("DOMContentLoaded", () => {
+  verificarProgreso();
+  // Añadir animación de carga completa
+  document.body.classList.add("page-loaded");
+});

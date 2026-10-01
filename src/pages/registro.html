@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Crea tu héroe personalizado en CONSTELA" />
     <title>CONSTELA - Creación de Personaje</title>
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="./registro.css" />
@@ -11,46 +12,48 @@
     <div class="registro-container">
       <header class="registro-header">
         <div class="header-content">
+          <a href="./welcome.html" class="back-link">← ATRÁS</a>
           <h1 class="header-title">CONSTELA</h1>
-          <p class="header-subtitle">Plataforma de Estudio Gamificada</p>
+          <p class="header-subtitle">Forja tu Identidad Académica</p>
         </div>
       </header>
 
       <main class="registro-main">
         <div class="registro-grid">
           <section class="registro-form-section">
-            <div class="card-moba">
-              <h2 class="form-title">Crea tu Héroe</h2>
-              <p class="form-subtitle">Elige tu identidad y comienza tu aventura académica</p>
+            <div class="card-moba glow-epic">
+              <h2 class="form-title">🎭 Crea tu Héroe</h2>
+              <p class="form-subtitle">Personaliza tu identidad y comienza tu legenda académica</p>
 
               <div class="form-group">
-                <label for="username" class="form-label">NOMBRE DE USUARIO</label>
+                <label for="username" class="form-label">Nombre de Usuario</label>
                 <input
                   type="text"
                   id="username"
                   class="form-input"
-                  placeholder="Ingresa tu nombre épico..."
+                  placeholder="Tu nombre épico aquí..."
                   maxlength="20"
+                  required
                 />
-                <small class="form-hint">Entre 3 y 20 caracteres</small>
+                <small class="form-hint">3-20 caracteres • Solo letras y números</small>
               </div>
 
               <div class="form-group">
-                <label class="form-label">ELIGE TU RAZA</label>
+                <label class="form-label">⚡ Elige tu Raza</label>
                 <div class="razas-container">
                   <div class="raza-card selected" data-raza="Astrales">
                     <div class="raza-icon">✦</div>
                     <h4 class="raza-name">Astrales</h4>
-                    <p class="raza-description">Poder de Resolución +8</p>
+                    <p class="raza-description">Poder de Resolución +100</p>
                     <div class="raza-stats">
-                      <span class="stat-badge">Lógica Superior</span>
+                      <span class="stat-badge">Lógica Celestial</span>
                     </div>
                   </div>
 
                   <div class="raza-card" data-raza="Célidos">
                     <div class="raza-icon">◉</div>
                     <h4 class="raza-name">Célidos</h4>
-                    <p class="raza-description">Resistencia a Distracción +8</p>
+                    <p class="raza-description">Resistencia a Distracción +100</p>
                     <div class="raza-stats">
                       <span class="stat-badge">Enfoque Absoluto</span>
                     </div>
@@ -59,22 +62,22 @@
                   <div class="raza-card" data-raza="Nebulanos">
                     <div class="raza-icon">◆</div>
                     <h4 class="raza-name">Nebulanos</h4>
-                    <p class="raza-description">Velocidad de Enfoque +8</p>
+                    <p class="raza-description">Velocidad de Enfoque +100</p>
                     <div class="raza-stats">
-                      <span class="stat-badge">Rapidez Extrema</span>
+                      <span class="stat-badge">Rapidez Quantum</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="form-label">SELECCIONA GÉNERO</label>
+                <label class="form-label">♂ ♀ Selecciona Género</label>
                 <div class="gender-toggle-container">
-                  <button class="btn-gender selected" data-gender="Masculino">
+                  <button type="button" class="btn-gender selected" data-gender="Masculino">
                     <span class="gender-icon">♂</span>
                     <span class="gender-label">Masculino</span>
                   </button>
-                  <button class="btn-gender" data-gender="Femenino">
+                  <button type="button" class="btn-gender" data-gender="Femenino">
                     <span class="gender-icon">♀</span>
                     <span class="gender-label">Femenino</span>
                   </button>
@@ -82,20 +85,20 @@
               </div>
 
               <div class="form-group">
-                <label for="role-select" class="form-label">ELIGE TU ROL</label>
-                <select id="role-select" class="form-select">
-                  <option value="">-- Selecciona tu rol --</option>
-                  <option value="GuardianDelEnfoque">Guardián del Enfoque (Tanque)</option>
-                  <option value="EspecialistaAcademico">Especialista Académico (Mago)</option>
+                <label for="role-select" class="form-label">🎯 Elige tu Rol</label>
+                <select id="role-select" class="form-select" required>
+                  <option value="">-- Selecciona tu rol de batalla --</option>
+                  <option value="GuardianDelEnfoque">Guardián del Enfoque (Defensa)</option>
+                  <option value="EspecialistaAcademico">Especialista Académico (Magia)</option>
                   <option value="SoporteMotivacional">Soporte Motivacional (Apoyo)</option>
                 </select>
               </div>
 
               <button id="btn-iniciar" class="btn-moba btn-epic btn-lg btn-block">
-                INICIAR AVENTURA
+                🚀 INICIAR AVENTURA
               </button>
 
-              <p class="form-footer">Al continuar, aceptas los términos de CONSTELA Academy</p>
+              <p class="form-footer">Al crear tu héroe, aceptas guardar tu progreso localmente</p>
             </div>
           </section>
 
@@ -110,7 +113,7 @@
                 <div class="preview-image-container">
                   <img
                     id="preview-imagen"
-                    src="../assets/personajes/astrales_m_skin_base.png"
+                    src="../assets/personajes/default.svg"
                     alt="Previsualización del personaje"
                     class="preview-imagen"
                   />
@@ -158,7 +161,7 @@
       </main>
 
       <footer class="registro-footer">
-        <p>&copy; 2026 CONSTELA Academy. Todos los derechos reservados.</p>
+        <p>&copy; 2026 CONSTELA Academy • Tu aventura académica comienza aquí</p>
       </footer>
     </div>
 
