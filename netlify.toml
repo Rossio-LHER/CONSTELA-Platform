@@ -1,1 +1,8 @@
-[build]\n  command = \"echo 'Static site - no build needed'\"\n  publish = \"src\"\n\n[[redirects]]\n  from = \"/*\"\n  to = \"/index.html\"\n  status = 200\n\n[context.production]\n  environment = { NODE_VERSION = \"18\" }\n
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
